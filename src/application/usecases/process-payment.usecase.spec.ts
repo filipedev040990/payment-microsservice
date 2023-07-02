@@ -24,6 +24,11 @@ describe('ProcessPaymentUseCase', () => {
         expiration: '2023-12'
       }
     }
+
+    fakeGateway.processPayment.mockResolvedValue({
+      status: 'approved',
+      reason: undefined
+    })
   })
 
   test('should call Payment Gateway once and with correct values', async () => {
@@ -31,5 +36,14 @@ describe('ProcessPaymentUseCase', () => {
 
     expect(fakeGateway.processPayment).toHaveBeenCalledTimes(1)
     expect(fakeGateway.processPayment).toHaveBeenCalledWith(input)
+  })
+
+  test('should return a correct response of gateway', async () => {
+    const output = await sut.execute(input)
+
+    expect(output).toEqual({
+      status: 'approved',
+      reason: undefined
+    })
   })
 })

@@ -4,7 +4,6 @@ import { ProcessPaymentUseCaseinterface } from '../contratcs/process-payment-use
 export class ProcessPaymentUseCase implements ProcessPaymentUseCaseinterface {
   constructor (private readonly paymentGateway: PaymentGateayInterface) {}
   async execute (input: ProcessPaymentUseCaseinterface.Input): Promise<ProcessPaymentUseCaseinterface.Output> {
-    await this.paymentGateway.processPayment(input)
-    return { status: '' }
+    return await this.paymentGateway.processPayment(input)
   }
 }
