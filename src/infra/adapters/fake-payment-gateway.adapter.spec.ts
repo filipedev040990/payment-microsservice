@@ -25,4 +25,10 @@ describe('FakeyPaymentGateway', () => {
   test('should return approved if last card number is even', async () => {
     expect(await sut.processPayment(input)).toEqual({ status: 'approved' })
   })
+
+  test('should return refused and reason if last card number is not even', async () => {
+    input.creditCard.number = '5533810961168331'
+
+    expect(await sut.processPayment(input)).toEqual({ status: 'refused', reason: 'Saldo insuficiente' })
+  })
 })

@@ -9,6 +9,6 @@ export class FakeyPaymentGateway implements PaymentGateayInterface {
       return { status: 'approved' }
     }
 
-    return { status: '' }
+    return { status: 'refused', reason: 'Saldo insuficiente' }
   }
 }
