@@ -1,8 +1,8 @@
-export interface ProcessPaymentUseCaseinterface {
-  execute (input: ProcessPaymentUseCaseinterface.Input): Promise<ProcessPaymentUseCaseinterface.Output>
+export interface ProcessPaymentUseCaseInterface {
+  execute (input: ProcessPaymentUseCaseInterface.Input): Promise<ProcessPaymentUseCaseInterface.Output>
 }
 
-export namespace ProcessPaymentUseCaseinterface {
+export namespace ProcessPaymentUseCaseInterface {
   export type Input = {
     payer: {
       name: string

@@ -1,9 +1,9 @@
 import { PaymentGateayInterface } from '../contratcs/payment-gateway.interface'
-import { ProcessPaymentUseCaseinterface } from '../contratcs/process-payment-usecase.interface'
+import { ProcessPaymentUseCaseInterface } from '../contratcs/process-payment-usecase.interface'
 
-export class ProcessPaymentUseCase implements ProcessPaymentUseCaseinterface {
+export class ProcessPaymentUseCase implements ProcessPaymentUseCaseInterface {
   constructor (private readonly paymentGateway: PaymentGateayInterface) {}
-  async execute (input: ProcessPaymentUseCaseinterface.Input): Promise<ProcessPaymentUseCaseinterface.Output> {
+  async execute (input: ProcessPaymentUseCaseInterface.Input): Promise<ProcessPaymentUseCaseInterface.Output> {
     return await this.paymentGateway.processPayment(input)
   }
 }
