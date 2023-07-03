@@ -1,8 +1,8 @@
-export interface PaymentLogProcessingRepositoryInterface {
-  savePaymentProcessingLog (input: PaymentLogProcessingRepositoryInterface.Input): Promise<void>
+export interface SavePaymentLogProcessingRepositoryInterface {
+  savePaymentProcessingLog (input: SavePaymentLogProcessingRepositoryInterface.Input): Promise<void>
 }
 
-export namespace PaymentLogProcessingRepositoryInterface{
+export namespace SavePaymentLogProcessingRepositoryInterface{
   export type Input = {
     id: string
     input: string

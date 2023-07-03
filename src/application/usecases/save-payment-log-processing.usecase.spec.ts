@@ -2,11 +2,11 @@ import { mock } from 'jest-mock-extended'
 import { SavePaymentLogProcessingUseCaseInterface } from '../contratcs/save-payment-processing-log-usecase.interface'
 import { SavePaymentLogProcessingUseCase } from './save-payment-log-processing.usecase'
 import { UUIDGeneratorInterface } from '../contratcs/uuid-generator.interface'
-import { PaymentLogProcessingRepositoryInterface } from '../contratcs/payment-processing-log-repository'
+import { SavePaymentLogProcessingRepositoryInterface } from '../contratcs/payment-processing-log-repository'
 import MockDate from 'mockdate'
 
 const uuidGenerator = mock<UUIDGeneratorInterface>()
-const repository = mock<PaymentLogProcessingRepositoryInterface>()
+const repository = mock<SavePaymentLogProcessingRepositoryInterface>()
 
 describe('SavePaymentLogProcessingUseCase', () => {
   let sut: SavePaymentLogProcessingUseCase
