@@ -1,8 +1,8 @@
-export interface PaymentGateayInterface {
-  processPayment (input: PaymentGateayInterface.Input): Promise<PaymentGateayInterface.Output>
+export interface PaymentGatewayInterface {
+  processPayment (input: PaymentGatewayInterface.Input): Promise<PaymentGatewayInterface.Output>
 }
 
-export namespace PaymentGateayInterface {
+export namespace PaymentGatewayInterface {
   export type Input = {
     payer: {
       name: string

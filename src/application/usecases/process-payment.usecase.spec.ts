@@ -1,9 +1,9 @@
-import { PaymentGateayInterface } from '../contratcs/payment-gateway.interface'
+import { PaymentGatewayInterface } from '../contratcs/payment-gateway.interface'
 import { ProcessPaymentUseCaseInterface } from '../contratcs/process-payment-usecase.interface'
 import { ProcessPaymentUseCase } from './process-payment.usecase'
 import { mock } from 'jest-mock-extended'
 
-const fakeGateway = mock<PaymentGateayInterface>()
+const fakeGateway = mock<PaymentGatewayInterface>()
 
 describe('ProcessPaymentUseCase', () => {
   let sut: ProcessPaymentUseCase

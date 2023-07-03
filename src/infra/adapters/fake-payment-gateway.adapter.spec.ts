@@ -1,9 +1,9 @@
-import { PaymentGateayInterface } from '@/application/contratcs/payment-gateway.interface'
+import { PaymentGatewayInterface } from '@/application/contratcs/payment-gateway.interface'
 import { FakeyPaymentGateway } from './fake-payment-gateway.adapter'
 
 describe('FakeyPaymentGateway', () => {
   let sut: FakeyPaymentGateway
-  let input: PaymentGateayInterface.Input
+  let input: PaymentGatewayInterface.Input
 
   beforeEach(() => {
     sut = new FakeyPaymentGateway()
