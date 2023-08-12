@@ -18,5 +18,6 @@ export namespace ProcessPaymentUseCaseInterface {
 
   export type Output = {
     status: string
+    reason?: string
   }
 }

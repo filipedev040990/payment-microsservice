@@ -1,5 +1,5 @@
 import { DecryptDataInterface } from '@/application/contratcs/decrypt-data.interface'
-import CryptoJS from 'crypto-js'
+import * as CryptoJS from 'crypto-js'
 
 export class CryptoJsAdapter implements DecryptDataInterface {
   constructor (private readonly key: string) { }

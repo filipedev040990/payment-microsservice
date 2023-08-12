@@ -7,13 +7,13 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url      = "mysql://root:123456789@mysql:3306/payment"
 }
 
 model PaymentLogs {
   id        String   @id
-  input     String
-  output    String
+  input     String   @db.LongText()
+  output    String   @db.LongText()
   createdAt DateTime
 
   @@map("payment_logs")
