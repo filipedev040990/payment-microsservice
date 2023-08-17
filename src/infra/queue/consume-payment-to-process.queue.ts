@@ -43,7 +43,7 @@ export const consumeQueuePaymentsToProcess = async (): Promise<void> => {
 
       output = JSON.stringify(paymentProcessed)
 
-      const queuePayload = makeQueuePayload(payment, paymentProcessed)
+      const queuePayload = makeQueuePayload(payment, paymentProcessed, uuidGenerator)
 
       await queue.publish('payments', 'payment_processed', JSON.stringify(queuePayload))
     } catch (error) {
@@ -94,7 +94,8 @@ const makeProcessPaymentInput = async (payment: any): Promise<any> => {
   }
 }
 
-const makeQueuePayload = (payment: any, paymentProcessed: any): any => ({
+const makeQueuePayload = (payment: any, paymentProcessed: any, uuidGenerator: UUIDGenerator): any => ({
+  identifier: uuidGenerator.generate(),
   status: paymentProcessed.status,
   reason: paymentProcessed.reason ?? undefined,
   charge: {
